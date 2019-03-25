@@ -18,7 +18,7 @@ c.Authenticator.add_user_cmd =  ['adduser', '--home', '/home/USERNAME']
 c.Authenticator.delete_invalid_users = True
 c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 c.PAMAuthenticator.open_sessions = False
-c.Spawner.cmd=['/home/quantaxis/anaconda3/bin/jupyter-labhub','/home/quantaxis/anaconda3/bin/jupyterhub-singleuser']
+c.Spawner.cmd=['jupyter-labhub','jupyterhub-singleuser']
 # from jupyterhub.spawner import LocalProcessSpawner
 # class MySpawner(LocalProcessSpawner):
 #     def _notebook_dir_default(self):
