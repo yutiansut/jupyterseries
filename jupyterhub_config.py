@@ -10,7 +10,7 @@ c.PAMAuthenticator.encoding = 'utf-8'
 c.LocalAuthenticator.create_system_users = True
 c.DummyAuthenticator.password = "940809"
 
-c.Authenticator.whitelist = set(['quantaxis', 'admin', 'yutiansut'])
+c.Authenticator.whitelist = set(['quantaxis', 'admin', 'yutiansut', 'test1', 'test2', 'zgj'])
 c.Authenticator.admin_users = {'quantaxis', 'admin', 'yutiansut'}
 
 c.JupyterHub.statsd_prefix = 'jupyterhub'

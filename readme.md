@@ -16,6 +16,8 @@ sudo /home/quantaxis/anaconda3/bin/jupyterhub -f jupyterhub_config.py  --no-ssl
 
 export PATH=/root/anaconda3/bin:$PATH
 
+pip install jupyterthemes
+sudo /home/quantaxis/anaconda3/bin/jt -t monokai -f fira -fs 10  -cellw 90% -N
 
 ```
 
