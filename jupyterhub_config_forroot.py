@@ -19,6 +19,7 @@ c.Authenticator.delete_invalid_users = True
 c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 c.PAMAuthenticator.open_sessions = False
 c.Spawner.cmd=['jupyter-labhub','jupyterhub-singleuser']
+c.JupyterHub.logo_file = '/home/quantaxis/logo.png'
 # from jupyterhub.spawner import LocalProcessSpawner
 # class MySpawner(LocalProcessSpawner):
 #     def _notebook_dir_default(self):
