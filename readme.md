@@ -11,3 +11,5 @@ sudo /home/quantaxis/anaconda3/bin/pip install jupyterhub-ldapauthenticator
 sudo /home/quantaxis/anaconda3/bin/jupyter labextension install @oriolmirosa/jupyterlab_materialdarker
 
 sudo /home/quantaxis/anaconda3/bin/jupyterhub -f jupyterhub_config.py  --no-ssl
+
+export PATH=/root/anaconda3/bin:$PATH

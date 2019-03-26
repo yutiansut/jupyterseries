@@ -18,7 +18,35 @@ c.Authenticator.add_user_cmd =  ['adduser', '--home', '/home/USERNAME']
 c.Authenticator.delete_invalid_users = True
 c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
 c.PAMAuthenticator.open_sessions = False
-c.Spawner.cmd=['/home/quantaxis/anaconda3/bin/jupyter-labhub','/home/quantaxis/anaconda3/bin/jupyterhub-singleuser']
+c.Spawner.cmd=['/home/quantaxis/anaconda3/bin/jupyter-labhub']
+c.JupyterHub.admin_access = True
+c.JupyterHub.allow_named_servers = True
+c.JupyterHub.answer_yes = True
+c.Spawner.notebook_dir = '~/'
+#c.Spawner.default_url = ''
+c.Spawner.disable_user_config = False
+c.Spawner.env_keep = ['PATH', 'PYTHONPATH', 'CONDA_ROOT', 'CONDA_DEFAULT_ENV', 'VIRTUAL_ENV', 'LANG', 'LC_ALL']
+
+c.NotebookApp.allow_credentials = True
+
+## Set the Access-Control-Allow-Origin header
+#  
+#  Use '*' to allow any origin to access your server.
+#  
+#  Takes precedence over allow_origin_pat.
+c.NotebookApp.allow_origin = '*'
+c.NotebookApp.allow_remote_access = True
+c.NotebookApp.tornado_settings = { 'headers': { 'Content-Security-Policy': "" }}
+c.JupyterHub.tornado_settings = { 'headers': { 'Content-Security-Policy': "" }}
+from jupyterhub.spawner import LocalProcessSpawner
+class MySpawner(LocalProcessSpawner):
+    def _notebook_dir_default(self):
+        return '/home/' + self.user.name
+
+c.JupyterHub.spawner_class = MySpawner
+
+
+#c.JupyterHub.logo_file = ''
 # from jupyterhub.spawner import LocalProcessSpawner
 # class MySpawner(LocalProcessSpawner):
 #     def _notebook_dir_default(self):
