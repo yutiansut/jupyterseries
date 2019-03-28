@@ -16,7 +16,7 @@ c.Authenticator.admin_users = {'quantaxis', 'admin', 'yutiansut'}
 
 c.JupyterHub.statsd_prefix = 'jupyterhub'
 c.Authenticator.add_user_cmd = ['adduser', '-q', '--gecos', '""', '--home', '/home/USERNAME']
-c.LocalAuthenticator.group_whitelist = {'jupyterhub'}
+#c.LocalAuthenticator.group_whitelist = {'jupyterhub'}
 
 c.Authenticator.delete_invalid_users = True
 c.JupyterHub.authenticator_class = 'jupyterhub.auth.PAMAuthenticator'
